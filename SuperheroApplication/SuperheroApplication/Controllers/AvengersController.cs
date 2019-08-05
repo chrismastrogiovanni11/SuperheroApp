@@ -59,12 +59,12 @@ namespace Superhero_App.Controllers
 
         // POST: Avengers/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Superhero superhero)
         {
             try
             {
                 // TODO: Add update logic here
-
+                context.Avengers.
                 return RedirectToAction("Index");
             }
             catch
@@ -81,12 +81,13 @@ namespace Superhero_App.Controllers
 
         // POST: Avengers/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Superhero superhero)
         {
             try
             {
                 // TODO: Add delete logic here
-
+                context.Avengers.Remove(superhero);
+                context.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
