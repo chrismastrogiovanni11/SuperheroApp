@@ -18,6 +18,10 @@ namespace Superhero_App.Controllers
         // GET: Avengers
         public ActionResult Index()
         {
+            //LINQ Query to get data
+            var Superheroes = from superhero in Avengers
+                              select superhero;
+             
             return View();
         }
 
@@ -64,8 +68,8 @@ namespace Superhero_App.Controllers
             try
             {
                 // TODO: Add update logic here
-                context.Avengers.
-                return RedirectToAction("Index");
+                //context.Avengers.
+                    return RedirectToAction("Index");
             }
             catch
             {
@@ -86,6 +90,7 @@ namespace Superhero_App.Controllers
             try
             {
                 // TODO: Add delete logic here
+
                 context.Avengers.Remove(superhero);
                 context.SaveChanges();
                 return RedirectToAction("Index");
