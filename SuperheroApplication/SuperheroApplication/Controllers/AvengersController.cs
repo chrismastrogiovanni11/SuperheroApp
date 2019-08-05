@@ -18,11 +18,14 @@ namespace Superhero_App.Controllers
         // GET: Avengers
         public ActionResult Index()
         {
+
             //LINQ Query to get data
-            var Superheroes = from superhero in Avengers
-                              select superhero;
+            //var Superheroes = from superhero in Avengers
+            //                  select superhero;
+
+            var superheroes = context.Superheroes.ToList();
              
-            return View();
+            return View(superheroes);
         }
 
         // GET: Avengers/Details/5
@@ -45,7 +48,7 @@ namespace Superhero_App.Controllers
             try
             {
                 // TODO: Add insert logic here
-                context.Avengers.Add(superhero);
+                context.Superheroes.Add(superhero);
                 context.SaveChanges();
                 return RedirectToAction("Create");
             }
@@ -78,22 +81,23 @@ namespace Superhero_App.Controllers
         }
 
         // GET: Avengers/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, Superhero superhero)
         {
+            var Superhero = context.Superheroes.Where(s => s.Id == superhero.Id);
             return View();
         }
 
         // POST: Avengers/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, Superhero superhero)
+        public ActionResult Delete(int id)
         {
             try
             {
                 // TODO: Add delete logic here
-
-                context.Avengers.Remove(superhero);
+               // id =
+                   // context.Superheroes.Remove(id);
                 context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Delete");
             }
             catch
             {

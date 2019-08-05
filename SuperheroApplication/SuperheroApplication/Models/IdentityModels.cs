@@ -21,9 +21,8 @@ namespace SuperheroApplication.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        internal IEnumerable<object> Superhero;
 
-        public DbSet<Superhero> Avengers { get; set; }
+        public DbSet<Superhero> Superheroes { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
