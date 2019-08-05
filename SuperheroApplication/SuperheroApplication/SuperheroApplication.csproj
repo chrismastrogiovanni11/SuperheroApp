@@ -244,7 +244,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Avengers\Create.cshtml" />
     <Content Include="Views\Avengers\Index.cshtml" />
-    <Content Include="Views\Delete.cshtml" />
+    <Content Include="Views\Avengers\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
