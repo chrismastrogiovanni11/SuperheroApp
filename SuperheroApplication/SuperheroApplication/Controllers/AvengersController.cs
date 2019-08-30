@@ -31,7 +31,9 @@ namespace Superhero_App.Controllers
         // GET: Avengers/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+
+            var superhero = context.Superheroes.Where(s => s.Id == id).Single();
+            return View("Index");
         }
 
         // GET: Avengers/Create
@@ -45,39 +47,39 @@ namespace Superhero_App.Controllers
         [HttpPost]
         public ActionResult Create(Superhero superhero)
         {
-            try
-            {
+
                 // TODO: Add insert logic here
                 context.Superheroes.Add(superhero);
                 context.SaveChanges();
                 return RedirectToAction("Create");
-            }
-            catch
-            {
-                return View();
-            }
+
         }
 
         // GET: Avengers/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var superhero = context.Superheroes.Where(s => s.Id == id).Single();
+            return View(superhero);
         }
 
         // POST: Avengers/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Superhero superhero)
+        public ActionResult Edit(Superhero superhero)
         {
-            try
-            {
+
+
                 // TODO: Add update logic here
-                //context.Avengers.
-                    return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                var SuperheroInDB = context.Superheroes.Single(h => h.Id == superhero.Id);
+                SuperheroInDB.PrimaryAbility = superhero.PrimaryAbility;
+                SuperheroInDB.SecondaryAbility = superhero.SecondaryAbility;
+                SuperheroInDB.SuperheroName = superhero.SuperheroName;
+                SuperheroInDB.AlterEgoName = superhero.AlterEgoName;
+                SuperheroInDB.CatchPhrase = superhero.CatchPhrase;
+                     context.SaveChanges();
+                     return RedirectToAction("Index");
+
+
+
         }
 
         // GET: Avengers/Delete/5
@@ -91,18 +93,14 @@ namespace Superhero_App.Controllers
         [HttpPost]
         public ActionResult Delete(Superhero superhero)
         {
-            try
-            {
+
                 // TODO: Add delete logic here
                 var hero = context.Superheroes.Where(s => s.Id == superhero.Id).FirstOrDefault();
                 context.Superheroes.Remove(hero);
                 context.SaveChanges();
                 return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+
+
         }
     }
 }
