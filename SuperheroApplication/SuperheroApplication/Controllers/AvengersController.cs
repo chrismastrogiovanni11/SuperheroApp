@@ -33,7 +33,7 @@ namespace Superhero_App.Controllers
         {
 
             var superhero = context.Superheroes.Where(s => s.Id == id).Single();
-            return View("Index");
+            return View(superhero);
         }
 
         // GET: Avengers/Create

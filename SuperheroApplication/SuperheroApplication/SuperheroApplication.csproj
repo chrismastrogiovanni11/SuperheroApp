@@ -246,7 +246,7 @@
     <Content Include="Views\Avengers\Index.cshtml" />
     <Content Include="Views\Avengers\Delete.cshtml" />
     <Content Include="Views\Avengers\Edit.cshtml" />
-    <Content Include="Views\Avengers\View.cshtml" />
+    <Content Include="Views\Avengers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
