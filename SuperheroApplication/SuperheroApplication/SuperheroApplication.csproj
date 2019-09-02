@@ -193,6 +193,7 @@
     <Content Include="Content\bootstrap-def.min.css" />
     <Content Include="Content\bootstrap-superhero.css" />
     <Content Include="Content\bootstrap-superhero.min.css" />
+    <Content Include="Content\Image.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -223,6 +224,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="SuperheroImage\avengers.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
